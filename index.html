@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrés Calamaro - Discografía</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos limpios desde CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-title-wrap">
+            <span class="tulip-icon" title="Tulipán rojo">🌷</span>
+            <h1>ANDRÉS CALAMARO</h1>
+            <span class="tulip-icon" title="Tulipán rojo">🌷</span>
+        </div>
+        <p>Coleccion Lucia Sthefany Bianchi</p>
+    </header>
+    <div id="petals-container"></div>
+
+    <main class="container">
+        <!-- SECCIÓN SUPERIOR: REPRODUCTOR PRINCIPAL -->
+        <section class="player-card">
+            <div class="vinyl-container">
+                <div class="vinyl-disc" id="vinyl-disc">
+                    <img id="current-cover" src="" alt="Portada del álbum">
+                    <div class="vinyl-center"></div>
+                </div>
+            </div>
+
+            <div class="player-controls-area">
+                <div class="track-info">
+                    <span class="badge" id="current-album-badge">Álbum</span>
+                    <h2 id="current-title">Selecciona una canción</h2>
+                    <p id="current-artist">Andrés Calamaro</p>
+                </div>
+
+                <!-- Barra de progreso -->
+                <div class="progress-wrapper">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress-bar" value="0" min="0" max="100" step="0.1">
+                    <span id="duration">0:00</span>
+                </div>
+
+                <!-- Botones de control -->
+                <div class="controls">
+                    <button id="prev-btn" class="ctrl-btn" title="Anterior">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+                    <button id="play-btn" class="ctrl-btn play-main" title="Reproducir / Pausar">
+                        <i class="fa-solid fa-play" id="play-icon"></i>
+                    </button>
+                    <button id="next-btn" class="ctrl-btn" title="Siguiente">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+                </div>
+
+                <!-- Volumen -->
+                <div class="volume-wrapper">
+                    <i class="fa-solid fa-volume-high" id="volume-icon"></i>
+                    <input type="range" id="volume-bar" min="0" max="1" step="0.05" value="0.8">
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN INFERIOR: ÁLBUMES Y LISTA DE TEMAS -->
+        <section class="library-grid">
+            <!-- Selector de Discos -->
+            <div class="albums-panel">
+                <h3>Discografía</h3>
+                <div class="albums-list" id="albums-container">
+                    <!-- Se llena automáticamente desde script.js -->
+                </div>
+            </div>
+
+            <!-- Lista de Canciones del Disco Seleccionado -->
+            <div class="tracks-panel">
+                <div class="tracks-header">
+                    <h3 id="selected-album-title">Canciones</h3>
+                    <span id="selected-album-year"></span>
+                </div>
+                <ul class="tracks-list" id="tracks-container">
+                    <!-- Se llena automáticamente desde script.js -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Elemento de audio oculto -->
+     <audio id="audio-player"></audio>
+    <script src="datos.js"></script>
+    <script src="script.js"></script>>
+</body>
+</html>
